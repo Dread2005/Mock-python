@@ -11,7 +11,9 @@ Example:
     add_numbers(-1, 4) -> 3
 """
 def add_numbers(a, b):
-    pass
+    num_1 = a
+    num_2 = b
+    return (num_1+num_2)
 
 
 # Exercise 2: Subtract Numbers
@@ -23,7 +25,9 @@ Example:
     subtract_numbers(3, 5) -> -2
 """
 def subtract_numbers(a, b):
-    pass
+    num_1 = a
+    num_2 = b
+    return (num_1-num_2)
 
 
 # Exercise 3: FruitLoop
@@ -42,7 +46,16 @@ Example:
     Loop
 """
 def fruitloop(n):
-    pass
+    value_lst = []
+    for value in range(1, n):
+        if value % 3 == 1 and value % 5 == 1:
+            value_lst.append('FruitLoop')
+        elif value % 3:
+            value_lst.append('Fruit')
+        elif value % 5:
+            value_lst.append('Loop')
+    return value_lst
+        
 
 
 # Exercise 4: Fibonacci
@@ -54,7 +67,22 @@ Example:
     fibonacci(7) -> 13
 """
 def fibonacci(n: int):
+    value_lst = []
+    current = int
+    for values in range(0, n):
+        value_lst.append(values)
+   
+    # while len(value_lst) != 0:
+    #          try:
+    #             current = value_lst[0] + value_lst[1]
+    #             value_lst.pop(0)
+    #         except
+    
+            
+    print(current)
     pass
+fibonacci(7)
+
 
 
 # Exercise 5: Find Maximum
@@ -66,7 +94,15 @@ Example:
     find_max([-1,-5,-3]) -> -1
 """
 def find_max(numbers: list):
-    pass
+    current_num = 0
+    for values in numbers:
+        current_num = values
+        numbers.pop(numbers.index(current_num))
+        if current_num > values in numbers:
+            return current_num
+        else:
+            continue
+print(find_max([-1,-5,-3]))    
 
 
 # Exercise 6: Find Minimum
