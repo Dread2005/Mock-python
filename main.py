@@ -47,16 +47,16 @@ Example:
 """
 def fruitloop(n):
     value_lst = []
-    for value in range(1, n):
-        if value % 3 == 1 and value % 5 == 1:
+    for value in range(1, n+1):
+        if value % 3 == 0 and value % 5 == 0:
             value_lst.append('FruitLoop')
-        elif value % 3:
+        elif value % 3 == 0:
             value_lst.append('Fruit')
-        elif value % 5:
+        elif value % 5== 0:
             value_lst.append('Loop')
+        else:
+            value_lst.append(str(value))
     return value_lst
-        
-
 
 # Exercise 4: Fibonacci
 """
@@ -66,22 +66,22 @@ Example:
     fibonacci(5) -> 5
     fibonacci(7) -> 13
 """
-def fibonacci(n: int):
-    value_lst = []
-    current = int
-    for values in range(0, n):
-        value_lst.append(values)
+# def fibonacci(n: int):
+#     value_lst = []
+#     current = int
+#     for values in range(0, n):
+#         value_lst.append(values)
    
-    # while len(value_lst) != 0:
-    #          try:
-    #             current = value_lst[0] + value_lst[1]
-    #             value_lst.pop(0)
-    #         except
+#     # while len(value_lst) != 0:
+#     #          try:
+#     #             current = value_lst[0] + value_lst[1]
+#     #             value_lst.pop(0)
+#     #         except
     
             
-    print(current)
-    pass
-fibonacci(7)
+#     print(current)
+#     pass
+# fibonacci(7)
 
 
 
@@ -94,15 +94,17 @@ Example:
     find_max([-1,-5,-3]) -> -1
 """
 def find_max(numbers: list):
-    current_num = 0
+    current_num = numbers[0]
+    
+    numbers.pop(numbers.index(current_num))
+
     for values in numbers:
-        current_num = values
-        numbers.pop(numbers.index(current_num))
-        if current_num > values in numbers:
-            return current_num
-        else:
+        if values > current_num:
+            current_num = values
             continue
-print(find_max([-1,-5,-3]))    
+
+    return current_num
+   
 
 
 # Exercise 6: Find Minimum
@@ -114,7 +116,17 @@ Example:
     find_min([-1,-5,-3]) -> -5
 """
 def find_min(numbers: list):
-    pass
+    current_num = numbers[0]
+    
+    numbers.pop(numbers.index(current_num))
+
+    for values in numbers:
+        if values < current_num:
+            current_num = values
+            continue
+
+    return current_num
+ 
 
 
 # Exercise 7: Person Class
@@ -134,10 +146,12 @@ Example:
 """
 class Person:
     def __init__(self, name: str, age: int):
-        pass
+        self.name = name
+        self.age = age
 
     def greet(self):
-        pass
+        return f'Hello, my name is {self.name} and I am {str(self.age)} years old'
+
 
 
 
